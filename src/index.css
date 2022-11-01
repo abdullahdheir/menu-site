@@ -1,13 +1,113 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --main-color: #c95f2f;
+  --background-color: #f7f4f4;
+  --font-famliy: 'Almarai', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  color: var(--main-color);
+  background-color: var(--background-color);
+  font-family: var(--font-famliy);
+}
+
+.navbar-brand {
+  color: var(--main-color) !important;
+}
+
+.btn-color {
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  position: relative;
+  color: var(--main-color);
+  background-color: transparent;
+  padding: 5px 10px;
+  z-index: 1;
+}
+
+.btn-color::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--main-color);
+  z-index: -1000;
+}
+
+.btn-color:hover {
+  color: #fff;
+  transition: color .2s;
+}
+
+.btn-color:hover::before {
+  animation: full-btn .3s ease-in-out forwards;
+}
+
+.title-page {
+  margin: 20px auto;
+  padding: 10px 10px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #183658;
+  max-width: 200px;
+  border-bottom: 3px solid var(--main-color);
+  text-align: center !important;
+}
+
+.filter-btn {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.food-card {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media (max-width:758px) {
+  .food-card {
+    flex-direction: column;
+    height: auto;
+  }
+}
+.food-card .food-image {
+  width: 300px;
+  height: 100%;
+  
+}
+@media (max-width:758px) {
+  .food-card .food-image {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.food-card .food-card-body {
+  margin-bottom: 10px;
+}
+
+
+.food-card-description {
+  color: #888;
+  padding-bottom: 10px;
+  height: calc(100% - 40px);
+  overflow: hidden;
+}
+
+@keyframes full-btn {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
