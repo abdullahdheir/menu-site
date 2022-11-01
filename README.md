@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with Menu Site App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was published with [Menu Site](https://powermski.github.io/menu-site).
 
 ## Available Scripts
 
